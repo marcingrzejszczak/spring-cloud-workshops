@@ -1,0 +1,30 @@
+server.port: 9081
+spring.application.name: loan-issuance
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+  client:
+    instanceInfoReplicationIntervalSeconds: 1
+    registryFetchIntervalSeconds: 1
+logging:
+  level:
+    com.netflix: ERROR
+
+# Rabbit exchange = frauds
+spring.cloud.stream.bindings.frauds-out-0.destination: frauds
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus

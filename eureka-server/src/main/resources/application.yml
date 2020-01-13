@@ -1,0 +1,15 @@
+server.port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    instanceInfoReplicationIntervalSeconds: 1
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+logging:
+  level:
+    com.netflix: ERROR

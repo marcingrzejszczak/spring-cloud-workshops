@@ -1,0 +1,24 @@
+server.port: 9080
+spring.application.name: fraud-detection
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+  client:
+    instanceInfoReplicationIntervalSeconds: 1
+    registryFetchIntervalSeconds: 1
+logging:
+  level:
+    com.netflix: ERROR
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus
+
+# Rabbitmq exchange frauds
+spring.cloud.stream.bindings.frauds-in-0.destination: frauds

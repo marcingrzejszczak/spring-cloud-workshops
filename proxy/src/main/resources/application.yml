@@ -1,0 +1,19 @@
+server.port: 9060
+spring:
+  application.name: proxy
+  cloud:
+    gateway:
+      routes:
+          - id: fraud
+            uri: lb://fraud-detection
+            predicates:
+              - Path=/fraud-detection/**
+            filters:
+              - StripPrefix=1
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+  client:
+    instanceInfoReplicationIntervalSeconds: 1
+    registryFetchIntervalSeconds: 1
