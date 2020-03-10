@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>spring-cloud-workshops-parent</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1.BUILD-SNAPSHOT</version>
+
+	<name>Spring Cloud Workshops</name>
+	<description>Spring Cloud Workshops</description>
+
+	<modules>
+		<module>config-server</module>
+		<module>config-client</module>
+		<module>eureka-server</module>
+		<module>fraud-detection</module>
+		<module>loan-issuance</module>
+		<module>proxy</module>
+	</modules>
+
+</project>

@@ -12,6 +12,7 @@ logging:
     com.netflix: ERROR
 
 # Rabbit exchange = frauds
+spring.cloud.stream.source: frauds
 spring.cloud.stream.bindings.frauds-out-0.destination: frauds
 
 spring:
