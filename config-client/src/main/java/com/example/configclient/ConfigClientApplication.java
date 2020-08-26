@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@EnableConfigurationProperties(MyProps.class)
 public class ConfigClientApplication {
 
 	public static void main(String[] args) {
@@ -46,5 +47,34 @@ class BonusController {
 	@GetMapping("/bonus")
 	String foo() {
 		return this.value;
+	}
+}
+
+//remember about @EnableConfigurationProperties
+@RestController
+class ConfigPropsController {
+
+	private final MyProps value;
+
+	ConfigPropsController(MyProps value) {
+		this.value = value;
+	}
+
+	@GetMapping("/props")
+	String foo() {
+		return this.value.getMessage();
+	}
+}
+
+@ConfigurationProperties("democonfigclient")
+class MyProps {
+	private String message;
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getMessage() {
+		return message;
 	}
 }
