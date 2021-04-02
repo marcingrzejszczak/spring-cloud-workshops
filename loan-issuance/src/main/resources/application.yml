@@ -27,5 +27,3 @@ management:
       exposure:
         include:
           - health
-          - metrics
-          - prometheus

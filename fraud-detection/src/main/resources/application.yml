@@ -17,8 +17,6 @@ management:
       exposure:
         include:
           - health
-          - metrics
-          - prometheus
 
 # Rabbitmq exchange frauds
 spring.cloud.stream.bindings.frauds-in-0.destination: frauds
